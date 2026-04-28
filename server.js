@@ -97,13 +97,13 @@ const server = http.createServer((req, res) => {
                         console.log("Error writing to file")
                     } else {
 
-                        // read the file (required by the question) but do not display it
+                        // read the file 
                         fs.readFile("accessresults.txt", "utf-8", (err, fileContent) => {
                             if (err) {
                                 console.log("Error reading file")
                             } else {
 
-                                // only show the heading and the submitted details
+                                
                                 res.end(`
                                     <h1 style="color: red;">Access Denied! Invalid data.</h1>
                                     <p>${name}, ${maskedPassword}, ${displayedID}</p>
